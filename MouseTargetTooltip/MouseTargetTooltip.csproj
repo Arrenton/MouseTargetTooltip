@@ -1,21 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net7.0-windows</TargetFramework>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <Version>0.0.2.1</Version>
-    <Authors>Gotest</Authors>
-    <Platforms>x64</Platforms>
-	<Nullable>enable</Nullable>
-	<LangVersion>latest</LangVersion>
-	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-	<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
-	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-	<Deterministic>false</Deterministic>
-	<NullableContextOptions>enable</NullableContextOptions>
-	<GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-	<RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+	  <Authors>53m1k0l0n, Gotest</Authors>
+	  <Version>0.0.2.2</Version>
+	  <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+  <PropertyGroup>
+	  <TargetFramework>net7.0</TargetFramework>
+	  <Platforms>x64</Platforms>
+	  <Nullable>enable</Nullable>
+	  <LangVersion>latest</LangVersion>
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	  <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+	  <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
 	<PropertyGroup>
