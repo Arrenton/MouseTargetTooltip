@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <Version>0.0.2.0</Version>
+    <Version>0.0.2.1</Version>
     <Authors>Gotest</Authors>
     <Platforms>x64</Platforms>
 	<Nullable>enable</Nullable>
