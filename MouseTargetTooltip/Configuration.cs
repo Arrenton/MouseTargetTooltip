@@ -9,24 +9,15 @@ namespace MouseTargetTooltip
     public class Configuration : IPluginConfiguration
     {
         public int Version { get; set; } = 0;
-        public int TooltipX { get; set; } = 300;
-        public int TooltipY { get; set; } = 300;
-        public WindowAlignment TooltipAlignment { get; set; } = WindowAlignment.TopLeft;
-
+        public int TooltipX { get; set; } = 0;
+        public int TooltipY { get; set; } = 0;
         public bool Movable { get; set; } = true;
-
         public bool ShowHealthBar { get; set; } = true;
-
         public bool ShowMpBar { get; set; } = true;
-
         public bool ShowHpValue { get; set; } = true;
-
         public bool ShowMpValue { get; set; } = true;
-
         public bool ShowLevel { get; set; } = true;
-
         public bool ShowJob { get; set; } = true;
-
         public bool ShowName { get; set; } = true;
         public float FadeDelay { get; set; } = 1.25f;
         public float FadeTime { get; set; } = 0.5f;

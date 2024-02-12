@@ -85,7 +85,7 @@ namespace MouseTargetTooltip
                 if (Configuration.Movable)
                 {
                     if (!ImGui.IsMouseDragging(ImGuiMouseButton.Left))
-                        ImGui.SetNextWindowPos(new Vector2(Configuration.TooltipX, Configuration.TooltipY), ImGuiCond.Always, PivotAlignment(MouseTooltipPlugin.Ui!.Configuration.TooltipAlignment));
+                        ImGui.SetNextWindowPos(new Vector2(Configuration.TooltipX, Configuration.TooltipY), ImGuiCond.Always, PivotAlignment(WindowAlignment.TopLeft));
 
                     _visible = true;
                     DebugWindow.Draw(1, Configuration);
@@ -94,7 +94,7 @@ namespace MouseTargetTooltip
                 return;
             }
 
-            ImGui.SetNextWindowPos(new Vector2(Configuration.TooltipX, Configuration.TooltipY), ImGuiCond.Always, PivotAlignment(MouseTooltipPlugin.Ui!.Configuration.TooltipAlignment));
+            ImGui.SetNextWindowPos(new Vector2(Configuration.TooltipX, Configuration.TooltipY), ImGuiCond.Always, PivotAlignment(WindowAlignment.TopLeft));
 
             switch (_lastKnownActor.ObjectKind)
             {
@@ -129,21 +129,6 @@ namespace MouseTargetTooltip
                     {
                         Configuration.Movable = movable;
                         Configuration.Save();
-                    }
-
-                    ImGui.NewLine();
-
-                    if (ImGui.BeginCombo("Tooltip Window Alignment", Enum.GetName(Configuration.TooltipAlignment)))
-                    {
-                        var alignments = Enum.GetNames(typeof(WindowAlignment));
-                        for (int i = 0; i < alignments.Length; i++)
-                        {
-                            if (ImGui.Selectable(alignments[i]))
-                            {
-                                Configuration.TooltipAlignment = (WindowAlignment)i;
-                            }
-                        }
-                        ImGui.EndCombo();
                     }
 
                     ImGui.NewLine();
