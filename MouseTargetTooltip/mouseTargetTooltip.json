@@ -1,8 +1,0 @@
-{
-  "Author": "Gotest",
-  "Name": "Mouse Target Tooltip",
-  "Description": "A plugin that shows a tooltip for mouseover targets.",
-  "RepoUrl": "",
-  "Tags": [ "mouse", "mouseover", "tooltip" ],
-  "Punchline": "Shows a tooltip with a little information for characters that the mouse is over."
-}

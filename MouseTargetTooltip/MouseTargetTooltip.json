@@ -1,0 +1,18 @@
+{
+  "Author": "53m1k0l0n, Gotest",
+  "Name": "Mouse Target Tooltip",
+  "Punchline": "Shows a tooltip with a little information for characters that the mouse is over.",
+  "Description": "A plugin that shows a tooltip for mouseover targets.",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "mouse",
+    "mouseover",
+    "tooltip"
+  ],
+  "CategoryTags": null,
+  "RepoUrl": "https://github.com/53m1k0l0n/MouseTargetTooltip",
+  "ImageUrls": null,
+  "IconUrl": "https://raw.githubusercontent.com/53m1k0l0n/MouseTargetTooltip/master/MouseTargetTooltip/Images/icon.png"
+
+
+}
