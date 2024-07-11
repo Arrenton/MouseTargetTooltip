@@ -15,8 +15,8 @@ namespace MouseTargetTooltip
     {
         internal readonly Configuration Configuration;
 
-        private GameObject? _mouseTarget;
-        private GameObject? _lastKnownActor;
+        private IGameObject? _mouseTarget;
+        private IGameObject? _lastKnownActor;
         private float _alpha;
         private Stopwatch _fadeTimer;
         private Stopwatch _uiSpeedTimer;
@@ -47,7 +47,7 @@ namespace MouseTargetTooltip
         {
         }
 
-        public void Draw(GameObject? mouseOverTarget)
+        public void Draw(IGameObject? mouseOverTarget)
         {
             _mouseTarget = mouseOverTarget;
 
@@ -85,7 +85,7 @@ namespace MouseTargetTooltip
                 if (Configuration.Movable)
                 {
                     if (!ImGui.IsMouseDragging(ImGuiMouseButton.Left))
-                        ImGui.SetNextWindowPos(new Vector2(Configuration.TooltipX, Configuration.TooltipY), ImGuiCond.Always, PivotAlignment(MouseTooltipPlugin.Ui!.Configuration.TooltipAlignment));
+                        ImGui.SetNextWindowPos(new Vector2(Configuration.TooltipX, Configuration.TooltipY), ImGuiCond.Always, PivotAlignment(WindowAlignment.TopLeft));
 
                     _visible = true;
                     DebugWindow.Draw(1, Configuration);
@@ -94,15 +94,15 @@ namespace MouseTargetTooltip
                 return;
             }
 
-            ImGui.SetNextWindowPos(new Vector2(Configuration.TooltipX, Configuration.TooltipY), ImGuiCond.Always, PivotAlignment(MouseTooltipPlugin.Ui!.Configuration.TooltipAlignment));
+            ImGui.SetNextWindowPos(new Vector2(Configuration.TooltipX, Configuration.TooltipY), ImGuiCond.Always, PivotAlignment(WindowAlignment.TopLeft));
 
             switch (_lastKnownActor.ObjectKind)
             {
                 case ObjectKind.BattleNpc:
-                    BattleNpcWindow.Draw(_lastKnownActor as BattleNpc, _alpha, Configuration);
+                    BattleNpcWindow.Draw(_lastKnownActor as IBattleNpc, _alpha, Configuration);
                     break;
                 case ObjectKind.Player:
-                    PlayerWindow.Draw(_lastKnownActor as PlayerCharacter, _alpha, Configuration);
+                    PlayerWindow.Draw(_lastKnownActor as IPlayerCharacter, _alpha, Configuration);
                     break;
                 default:
                     DefaultWindow.Draw(_lastKnownActor, _alpha);
@@ -129,21 +129,6 @@ namespace MouseTargetTooltip
                     {
                         Configuration.Movable = movable;
                         Configuration.Save();
-                    }
-
-                    ImGui.NewLine();
-
-                    if (ImGui.BeginCombo("Tooltip Window Alignment", Enum.GetName(Configuration.TooltipAlignment)))
-                    {
-                        var alignments = Enum.GetNames(typeof(WindowAlignment));
-                        for (int i = 0; i < alignments.Length; i++)
-                        {
-                            if (ImGui.Selectable(alignments[i]))
-                            {
-                                Configuration.TooltipAlignment = (WindowAlignment)i;
-                            }
-                        }
-                        ImGui.EndCombo();
                     }
 
                     ImGui.NewLine();

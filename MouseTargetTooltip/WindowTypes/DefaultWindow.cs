@@ -6,7 +6,7 @@ namespace MouseTargetTooltip.WindowTypes
 {
     public static class DefaultWindow
     {
-        public static void Draw(GameObject gameObject, float alpha)
+        public static void Draw(IGameObject gameObject, float alpha)
         {
             ImGui.SetNextWindowSize(new Vector2(1, 1), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(40, 20), new Vector2(320, 320));

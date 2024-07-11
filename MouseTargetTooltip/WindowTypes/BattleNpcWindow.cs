@@ -6,7 +6,7 @@ namespace MouseTargetTooltip.WindowTypes
 {
     public static class BattleNpcWindow
     {
-        public static void Draw(BattleNpc? battleNpc, float alpha, Configuration config)
+        public static void Draw(IBattleNpc? battleNpc, float alpha, Configuration config)
         {
             if (battleNpc == null) return;
 

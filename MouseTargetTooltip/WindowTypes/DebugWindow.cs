@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using MouseTargetTooltip.Enums;
 using System.Numerics;
 using static MouseTargetTooltip.Constants.Constants;
 
@@ -35,8 +36,8 @@ namespace MouseTargetTooltip.WindowTypes
                 {
                     var pos = ImGui.GetWindowPos();
                     var size = ImGui.GetWindowSize();
-                    MouseTooltipPlugin.Ui!.Configuration.TooltipX = (int)(pos.X + size.X * PivotAlignment(MouseTooltipPlugin.Ui.Configuration.TooltipAlignment).X);
-                    MouseTooltipPlugin.Ui.Configuration.TooltipY = (int)(pos.Y + size.Y * PivotAlignment(MouseTooltipPlugin.Ui.Configuration.TooltipAlignment).Y);
+                    MouseTooltipPlugin.Ui!.Configuration.TooltipX = (int)(pos.X + size.X * PivotAlignment(WindowAlignment.TopLeft).X);
+                    MouseTooltipPlugin.Ui.Configuration.TooltipY = (int)(pos.Y + size.Y * PivotAlignment(WindowAlignment.TopLeft).Y);
                     MouseTooltipPlugin.Ui!.Configuration.Save();
                 }
                 ImGui.End();

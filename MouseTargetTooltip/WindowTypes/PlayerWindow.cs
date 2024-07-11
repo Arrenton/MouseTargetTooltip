@@ -6,7 +6,7 @@ namespace MouseTargetTooltip.WindowTypes
 {
     public static class PlayerWindow
     {
-        public static void Draw(PlayerCharacter? playerCharacter, float alpha, Configuration config)
+        public static void Draw(IPlayerCharacter? playerCharacter, float alpha, Configuration config)
         {
             if (playerCharacter == null) return;
 
